@@ -15,6 +15,4 @@
     { "binding": "RATE_LIMIT", "id": "YOUR_KV_ID" }
   ],
 
-  // Set a real password before deploying: `wrangler secret put ADMIN_PASSWORD`
-  "vars": { "ADMIN_PASSWORD": "changeme" }
 }
