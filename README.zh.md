@@ -19,6 +19,7 @@
 ## 为什么做
 
 - **Formspree 式接入体验** —— 纯 HTML action，无 JS 可用，也支持 AJAX
+- **项目管理** —— 按站点或客户分组表单；每个表单有 Overview / Submissions / Settings 三个标签页
 - **数据归你** —— 每条提交落在你自己的 D1 数据库，不是供应商的
 - **永久免费额度** —— Workers + D1 + KV 免费层覆盖每月数千条提交
 - **默认防垃圾** —— 蜜罐字段、按 IP 限流、可选 Cloudflare Turnstile

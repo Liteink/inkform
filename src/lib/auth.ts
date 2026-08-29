@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { db, envVars } from './db';
+import { db, ensureSchema, envVars } from './db';
 
 const COOKIE = 'inkform_sess';
 const TTL_DAYS = 30;
@@ -35,6 +35,7 @@ export async function login(password: string): Promise<boolean> {
   const raw = randomToken();
   const hash = await sha256(raw);
   const expires = new Date(Date.now() + TTL_DAYS * 86400_000).toISOString();
+  await ensureSchema();
   await db().prepare('INSERT INTO sessions (token, expires_at) VALUES (?, ?)').bind(hash, expires).run();
 
   const jar = await cookies();

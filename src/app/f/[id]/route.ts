@@ -1,5 +1,5 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare';
-import { db, envVars, type FormRow } from '@/lib/db';
+import { db, ensureSchema, envVars, type FormRow } from '@/lib/db';
 import { forward, rateLimited, verifyTurnstile } from '@/lib/forward';
 
 export const dynamic = 'force-dynamic';
@@ -17,6 +17,7 @@ export async function OPTIONS() {
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
   const { id } = await ctx.params;
+  await ensureSchema();
   const ajax =
     (req.headers.get('accept') || '').includes('application/json') ||
     (req.headers.get('x-requested-with') || '') === 'XMLHttpRequest';

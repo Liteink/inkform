@@ -21,6 +21,7 @@ That's the whole integration. No JavaScript required.
 ## Why
 
 - **Formspree-style DX** — plain HTML `action`, works without JS, AJAX supported
+- **Projects** — group forms per site or client; each form has Overview / Submissions / Settings tabs
 - **Your data, your database** — every submission lands in your own D1, not a vendor's
 - **Free tier forever** — Workers + D1 + KV free tiers cover thousands of submissions/month
 - **Spam-safe by default** — honeypot field, per-IP rate limiting, optional Cloudflare Turnstile
