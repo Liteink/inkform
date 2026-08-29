@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "inkform",
+  "compatibility_date": "2025-07-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": ".open-next/worker.js",
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+
+  // Create these with `wrangler d1 create inkform` / `wrangler kv namespace create RATE_LIMIT`,
+  // then paste the real IDs here.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "inkform", "database_id": "YOUR_D1_ID" }
+  ],
+  "kv_namespaces": [
+    { "binding": "RATE_LIMIT", "id": "YOUR_KV_ID" }
+  ],
+
+  // Set a real password before deploying: `wrangler secret put ADMIN_PASSWORD`
+  "vars": { "ADMIN_PASSWORD": "changeme" }
+}
