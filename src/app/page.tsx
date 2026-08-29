@@ -1,4 +1,4 @@
-const SITE = 'https://inkform.pages.dev'; // replaced after deploy
+const SITE = 'https://inkform.2849288402.workers.dev'; // replaced after deploy
 
 export default function Home() {
   return (
